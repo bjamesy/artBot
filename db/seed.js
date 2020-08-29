@@ -9,17 +9,18 @@ const whitmanQuotes = new Promise((resolve, reject) => {
             let poem = data[Math.floor(Math.random() * data.length)];
             let index = Math.floor(Math.random() * poem.lines.length);
             
-            post.push(poem.title.toUpperCase());
+            post.push(poem.title.toUpperCase() + "\n \n");
 
             for (i = index; i < index + 3; i++) {
                 if (poem.lines[i] == "") {
                     continue;
                 }
-                post.push(poem.lines[i]);
+                if (poem.lines[i] === undefined) {
+                    continue;
+                }
+                post.push(poem.lines[i].toString() + '\n');
             }
-            
-            console.log('WHITMAN post: ', post);
-            resolve(post);
+            resolve(post.join(""));
         })
         .catch(err => {
             console.log("WALT WHITMAN ERROR: ", err);

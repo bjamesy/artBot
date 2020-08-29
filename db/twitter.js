@@ -13,13 +13,11 @@ module.exports = {
     tweet() {
         whitmanQuotes
             .then(post => {
-                console.log('POST: ', post); 
-
-                client.post('statuses/update', { status: post.toString() },  function(err, tweet, response) {
+                client.post('statuses/update', { status: post },  function(err, tweet, response) {
                     if(err) {
                         console.log(err);
                     }
-                    console.log('TWEET: ', tweet.text);  // Tweet body.
+                    console.log('Whitman TWEET: ', tweet.text);  // Tweet body.
                 })                       
             })
             .catch(err => {

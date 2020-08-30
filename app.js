@@ -6,6 +6,11 @@ const path         = require('path');
 const cookieParser = require('cookie-parser');
 const logger       = require('morgan');
 const mongoose     = require('mongoose');
+const { tweet }    = require('./db/twitter');
+
+// Seeds
+const { whitmanQuotes } = require('./seed/waltWhitman');
+const { mannQuotes }    = require('./seed/thomasMann');
 
 mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
   useNewUrlParser: true,
@@ -13,6 +18,9 @@ mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
 });
 
 const app = express();
+
+// tweet(mannQuotes);
+// mannQuotes;
 
 app.use(logger('dev'));
 app.use(express.json());

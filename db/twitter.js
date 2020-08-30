@@ -1,5 +1,4 @@
-const twitter           = require('twitter');
-const { whitmanQuotes } = require('./seed');
+const twitter = require('twitter');
 
 const client = new twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -10,18 +9,18 @@ const client = new twitter({
 });
 
 module.exports = {
-    tweet() {
-        whitmanQuotes
+    tweet(seed) {
+        seed
             .then(post => {
-                client.post('statuses/update', { status: post },  function(err, tweet, response) {
+                client.post('statuses/update', { status: post.content },  function(err, tweet, response) {
                     if(err) {
                         console.log(err);
                     }
-                    console.log('Whitman TWEET: ', tweet.text);  // Tweet body.
+                    console.log(`${ post.name } TWEET: `, tweet.text);  // Tweet body.
                 })                       
             })
             .catch(err => {
-                console.log('Whitman TWEET ERROR: ', err);
+                console.log(`${ post.name } TWEET ERROR: `, err);
             })
     }
 }

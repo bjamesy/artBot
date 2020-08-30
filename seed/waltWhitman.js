@@ -18,9 +18,12 @@ const whitmanQuotes = new Promise((resolve, reject) => {
                 if (poem.lines[i] === undefined) {
                     continue;
                 }
-                post.push(poem.lines[i].toString() + '\n');
+                post.push(poem.lines[i].toString() + "\n");
             }
-            resolve(post.join(""));
+            resolve({ 
+                content: post.join(""), 
+                name: "Walt Whitman"
+            });
         })
         .catch(err => {
             console.log("WALT WHITMAN ERROR: ", err);

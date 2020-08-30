@@ -19,8 +19,9 @@ mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
 
 const app = express();
 
-// tweet(mannQuotes);
-// mannQuotes;
+// TWEET METHODS 
+const mann = tweet(mannQuotes);
+const whitman = tweet(whitmanQuotes);
 
 app.use(logger('dev'));
 app.use(express.json());

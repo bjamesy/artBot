@@ -12,16 +12,18 @@ const { tweet }    = require('./db/twitter');
 const { whitmanQuotes } = require('./seed/waltWhitman');
 const { mannQuotes }    = require('./seed/thomasMann');
 
-mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 
 const app = express();
 
 // TWEET METHODS 
 const mann = tweet(mannQuotes);
 const whitman = tweet(whitmanQuotes);
+// whitman;
+// mann;
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -14,7 +14,7 @@ module.exports = {
             .then(post => {
                 client.post('statuses/update', { status: post.content },  function(err, tweet, response) {
                     if(err) {
-                        console.log(err);
+                        console.log("TwITTER error: ", err);
                     }
                     console.log(`${ post.name } TWEET: `, tweet.text);  // Tweet body.
                 })                       

@@ -1,9 +1,9 @@
 const fetch = require('node-fetch');
 
-const whitmanQuotes = new Promise((resolve, reject) => {
+const hdThoreau = new Promise((resolve, reject) => {
     const post = [];
 
-    fetch(`https://poetrydb.org/author/Whitman`)
+    fetch(`https://poetrydb.org/author/thoreau`)
         .then(result => result.json())
         .then(data => {
             let poem = data[Math.floor(Math.random() * data.length)];
@@ -22,17 +22,17 @@ const whitmanQuotes = new Promise((resolve, reject) => {
             }            
             resolve({ 
                 content: post.join(""), 
-                name: "Walt Whitman",
-                consumer_key: process.env.TWITTER_CONSUMER_KEY_walt_whitman,
-                consumer_secret: process.env.TWITTER_CONSUMER_SECRET_walt_whitman,
-                access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY_walt_whitman,
-                access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET_walt_whitman
+                name: "Henry David Thoreau",
+                consumer_key: process.env.TWITTER_CONSUMER_KEY_hd_thoreau,
+                consumer_secret: process.env.TWITTER_CONSUMER_SECRET_hd_thoreau,
+                access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY_hd_thoreau,
+                access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET_hd_thoreau
             });
         })
         .catch(err => {
-            console.log("WALT WHITMAN ERROR: ", err);
+            console.log("THOREAU ERROR: ", err);
             reject(err);
         });  
 })
-
-module.exports = { whitmanQuotes }
+    
+module.exports = { hdThoreau };

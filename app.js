@@ -5,12 +5,13 @@ const express      = require('express');
 const path         = require('path');
 const cookieParser = require('cookie-parser');
 const logger       = require('morgan');
-const mongoose     = require('mongoose');
+// const mongoose     = require('mongoose');
 const { tweet }    = require('./db/twitter');
 
 // Seeds
-const { whitmanQuotes } = require('./seed/waltWhitman');
-const { mannQuotes }    = require('./seed/thomasMann');
+// const { whitmanQuotes } = require('./seed/waltWhitman');
+// const { hdThoreau } = require('./seed/hdThoreau');
+// const { mannQuotes } = require('./seed/thomasMann');
 
 // mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
 //   useNewUrlParser: true,
@@ -20,10 +21,9 @@ const { mannQuotes }    = require('./seed/thomasMann');
 const app = express();
 
 // TWEET METHODS 
-const mann = tweet(mannQuotes);
-const whitman = tweet(whitmanQuotes);
-// whitman;
-// mann;
+// tweet(whitmanQuotes);
+// tweet(hdThoreau);
+// tweet(mannQuotes);
 
 app.use(logger('dev'));
 app.use(express.json());

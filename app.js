@@ -7,11 +7,7 @@ const cookieParser = require('cookie-parser');
 const logger       = require('morgan');
 // const mongoose     = require('mongoose');
 const { tweet }    = require('./db/twitter');
-
-// Seeds
-// const { whitmanQuotes } = require('./seed/waltWhitman');
-// const { hdThoreau } = require('./seed/hdThoreau');
-// const { mannQuotes } = require('./seed/thomasMann');
+const { cron }     = require('./crons')
 
 // mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
 //   useNewUrlParser: true,
@@ -21,9 +17,9 @@ const { tweet }    = require('./db/twitter');
 const app = express();
 
 // TWEET METHODS 
-// tweet(whitmanQuotes);
-// tweet(hdThoreau);
-// tweet(mannQuotes);
+cron.mann;
+cron.thoreau;
+cron.whitman;
 
 app.use(logger('dev'));
 app.use(express.json());

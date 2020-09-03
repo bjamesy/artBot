@@ -17,9 +17,9 @@ const { cron }     = require('./crons')
 const app = express();
 
 // TWEET METHODS 
-cron.mann;
-cron.thoreau;
-cron.whitman;
+// cron.mann;
+// cron.thoreau;
+// cron.whitman;
 
 app.use(logger('dev'));
 app.use(express.json());

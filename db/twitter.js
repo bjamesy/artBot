@@ -1,7 +1,7 @@
 const twitter = require('twitter');
 
-module.exports = {
-    tweet(seed) {        
+function tweet(seed) {
+    const promise = new Promise((resolve, reject) => {        
         seed
             .then(post => {
                 const client = new twitter({
@@ -11,7 +11,7 @@ module.exports = {
                     access_token_secret: post.access_token_secret
                 });
         
-                client.post('statuses/update', { status: post.content },  function(err, tweet, response) {
+                client.post('statuses/update', { status: post.content }, function(err, tweet, response) {
                     if(err) {
                         let error = err[0].message;
 
@@ -27,10 +27,15 @@ module.exports = {
                         console.log(`TwITTER ${ post.name } error: `, err);
                     }
                     console.log(`${ post.name } TWEET: `, tweet.text);  // Tweet body.
+                    resolve();
                 })                       
             })
             .catch(err => {
                 console.log(`${ post.name } TWEET ERROR: `, err);
+                reject(err);
             })
-    }
-}
+    })    
+    return promise;
+} 
+
+module.exports = { tweet }

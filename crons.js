@@ -1,14 +1,25 @@
 const { tweet }         = require('./db/twitter');
-const walt = require('./seed/waltWhitman');
-const henry     = require('./seed/hdThoreau');
-const thomas    = require('./seed/thomasMann');
-// const { romanticism }   = require('./seed/romanticArt');
+const { whitmanQuotes } = require('./seed/waltWhitman');
+const { hdThoreau }     = require('./seed/hdThoreau');
+const { mannQuotes }    = require('./seed/thomasMann');
+const { romanticism }   = require('./seed/romanticArt');
 
-const cron = {
-    whitman: tweet(walt.whitmanQuotes),
-    mann: tweet(thomas.mannQuotes),
-    thoreau: tweet(henry.hdThoreau),
-    // romantics: tweet(romanticism)
+function mann() {
+    tweet(mannQuotes());
+};
+function thoreau() {
+    tweet(hdThoreau());
+};
+function whitman() {
+    tweet(whitmanQuotes());
+};
+function romanticism() {
+    tweet(romanticism());
+};
+
+module.exports = { 
+    mann,
+    whitman,
+    thoreau,
+    romanticism
 }
-
-module.exports = { cron }

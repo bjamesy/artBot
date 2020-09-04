@@ -17,11 +17,11 @@ module.exports = {
 
                         if(error.includes('Tweet needs to be a bit shorter')) {
                             console.log(`error rerun ${ post.name }`, error);
-                            return tweet(seed);
+                            return rerun;
                         }
                         if(error.includes('Status is a duplicate')) {
                             console.log(`error rerun ${ post.name }`, error);
-                            return tweet(seed);
+                            return rerun;
                         }
 
                         console.log(`TwITTER ${ post.name } error: `, err);

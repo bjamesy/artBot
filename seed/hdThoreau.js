@@ -21,6 +21,7 @@ const hdThoreau = new Promise((resolve, reject) => {
                 post.push(poem.lines[i].toString() + "\n");
             }            
             resolve({ 
+                rerun: hdThoreau,
                 content: post.join(""), 
                 name: "Henry David Thoreau",
                 consumer_key: process.env.TWITTER_CONSUMER_KEY_hd_thoreau,

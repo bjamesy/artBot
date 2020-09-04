@@ -21,6 +21,7 @@ const whitmanQuotes = new Promise((resolve, reject) => {
                 post.push(poem.lines[i].toString() + "\n");
             }            
             resolve({ 
+                rerun: whitmanQuotes,
                 content: post.join(""), 
                 name: "Walt Whitman",
                 consumer_key: process.env.TWITTER_CONSUMER_KEY_walt_whitman,

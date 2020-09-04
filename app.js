@@ -6,8 +6,6 @@ const path         = require('path');
 const cookieParser = require('cookie-parser');
 const logger       = require('morgan');
 // const mongoose     = require('mongoose');
-const { tweet }    = require('./db/twitter');
-const { cron }     = require('./crons')
 
 // mongoose.connect(`mongodb://localhost/${ process.env.DB }`, {
 //   useNewUrlParser: true,
@@ -15,11 +13,6 @@ const { cron }     = require('./crons')
 // });
 
 const app = express();
-
-// TWEET METHODS 
-// cron.mann;
-// cron.thoreau;
-// cron.whitman;
 
 app.use(logger('dev'));
 app.use(express.json());

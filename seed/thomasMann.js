@@ -9,6 +9,7 @@ const mannQuotes = new Promise((resolve, reject) => {
             let content = data.result[Math.floor(Math.random() * data.result.length)];
 
             resolve({
+                rerun: mannQuotes,
                 content: content.quote,
                 name: "Thomas Mann",
                 consumer_key: process.env.TWITTER_CONSUMER_KEY_thomas_mann,

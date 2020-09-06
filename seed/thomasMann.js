@@ -8,7 +8,7 @@ function mannQuotes() {
             })
             .then(data => {
                 let content = data.result[Math.floor(Math.random() * data.result.length)];
-    
+                // console.log('MANN this: ', this);
                 resolve({
                     rerun: mannQuotes,
                     content: content.quote,

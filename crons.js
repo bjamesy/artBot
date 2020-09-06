@@ -13,7 +13,7 @@ function thoreau() {
 function whitman() {
     tweet(whitmanQuotes());
 };
-function romanticism() {
+function romanticArt() {
     tweet(romanticism());
 };
 
@@ -21,5 +21,5 @@ module.exports = {
     mann,
     whitman,
     thoreau,
-    romanticism
+    romanticArt
 }

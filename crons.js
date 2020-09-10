@@ -1,4 +1,4 @@
-const { tweet }         = require('./db/twitter');
+const { tweet }         = require('./db/twitter/twitter');
 const { whitmanQuotes } = require('./seed/waltWhitman');
 const { hdThoreau }     = require('./seed/hdThoreau');
 const { mannQuotes }    = require('./seed/thomasMann');
@@ -12,6 +12,9 @@ function thoreau() {
 };
 function whitman() {
     tweet(whitmanQuotes());
+};
+function romanticArt() {
+    tweet(romanticism());
 };
 function romanticArt() {
     tweet(romanticism());

@@ -14,6 +14,7 @@ function romanticism() {
                     rerun: romanticism,
                     content: post, 
                     image: painting.image,
+                    fileName: "romantic-art.jpg",
                     name: "Romanticism",
                     consumer_key: process.env.TWITTER_CONSUMER_KEY_romanticism,
                     consumer_secret: process.env.TWITTER_CONSUMER_SECRET_romanticism,

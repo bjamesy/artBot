@@ -14,8 +14,9 @@ const tweet = (seed) => {
                 });
 
                 if(post.image) {
-                    download(post.image, "romantic-art.jpg", function() {
-                        const data = fs.readFileSync('romantic-art.jpg'); 
+                    download(post.image, post.fileName, function() {
+                        // callback to twitter media DOWNLOAD method 
+                        const data = fs.readFileSync(post.fileName); 
 
                         client.post('media/upload', { media: data }, function(err, media, response) {
                             if (!err) {

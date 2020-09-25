@@ -1,9 +1,14 @@
 const { tweet }         = require('./db/twitter/twitter');
-const { whitmanQuotes } = require('./seed/waltWhitman');
-const { hdThoreau }     = require('./seed/hdThoreau');
-const { mannQuotes }    = require('./seed/thomasMann');
-const { romanticism }   = require('./seed/romanticArt');
-const { caravaggio }    = require('./seed/caravaggio');
+const { whitmanQuotes } = require('./bots/waltWhitman');
+const { hdThoreau }     = require('./bots/hdThoreau');
+const { mannQuotes }    = require('./bots/thomasMann');
+const { romanticism }   = require('./bots/romanticArt');
+const { caravaggio }    = require('./bots/caravaggio');
+const { emersonQuotes } = require('./bots/rwEmerson');
+const { 
+    blakeLines,
+    blakeArt
+} = require('./bots/williamBlake');
 
 function mann() {
     tweet(mannQuotes());
@@ -20,11 +25,23 @@ function romanticArt() {
 function caravaggioArt() {
     tweet(caravaggio());
 };
+function blakePoem() {
+    tweet(blakeLines());
+};
+function blakeImage() {
+    tweet(blakeArt());
+};
+function emerson() {
+    tweet(emersonQuotes());
+};
 
 module.exports = { 
     mann,
     whitman,
     thoreau,
     romanticArt,
-    caravaggioArt
+    caravaggioArt,
+    blakeImage,
+    blakePoem,
+    emerson
 }

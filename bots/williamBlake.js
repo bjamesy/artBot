@@ -20,7 +20,8 @@ function blakeLines() {
                         continue;
                     }
                     post.push(poem.lines[i].toString() + "\n");
-                }            
+                }       
+
                 resolve({ 
                     rerun: blakeLines,
                     content: post.join(""), 

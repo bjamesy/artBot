@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 function romanticism() {    
     const promise = new Promise((resolve, reject) => {
-        fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d97edc2cb3880b4b0fc`)
+        fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d97edc2cb3880b4b0fc&imageFormat=HD`)
             .then(result => result.json())
             .then(data => {
                 let painting = data.data[Math.floor(Math.random() * data.data.length)];

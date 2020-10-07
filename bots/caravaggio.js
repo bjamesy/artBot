@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 function caravaggio() {    
     const promise = new Promise((resolve, reject) => {
-        fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d7cedc2cb3880b47b1a`)
+        fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d7cedc2cb3880b47b1a&imageFormat=HD`)
             .then(result => result.json())
             .then(data => {
                 let painting = data.data[Math.floor(Math.random() * data.data.length)];

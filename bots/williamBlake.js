@@ -42,7 +42,7 @@ function blakeLines() {
 
 function blakeArt() {    
     const promise = new Promise((resolve, reject) => {
-        fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d7eedc2cb3880b47f24`)
+        fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d7eedc2cb3880b47f24&imageFormat=HD`)
             .then(result => result.json())
             .then(data => {
                 let painting = data.data[Math.floor(Math.random() * data.data.length)];

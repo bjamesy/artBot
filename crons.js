@@ -5,6 +5,7 @@ const { mannQuotes }    = require('./bots/thomasMann');
 const { romanticism }   = require('./bots/romanticArt');
 const { caravaggio }    = require('./bots/caravaggio');
 const { emersonQuotes } = require('./bots/rwEmerson');
+const { wyeth }         = require('./bots/andrewWyeth');
 const { 
     blakeLines,
     blakeArt
@@ -34,7 +35,9 @@ function blakeImage() {
 function emerson() {
     tweet(emersonQuotes());
 };
-
+function wyethArt() {
+    tweet(wyeth());
+};
 module.exports = { 
     mann,
     whitman,
@@ -43,5 +46,6 @@ module.exports = {
     caravaggioArt,
     blakeImage,
     blakePoem,
-    emerson
+    emerson,
+    wyethArt
 }

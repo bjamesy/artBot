@@ -11,41 +11,48 @@ const {
     blakeArt
 } = require('./bots/williamBlake');
 
-function mann() {
+function tenThirtyAM() {
     tweet(mannQuotes());
-};
-function thoreau() {
+    tweet(emersonQuotes());
+    tweet(whitmanQuotes());
     tweet(hdThoreau());
 };
-function whitman() {
-    tweet(whitmanQuotes());
-};
-function romanticArt() {
-    tweet(romanticism());
-};
-function caravaggioArt() {
-    tweet(caravaggio());
-};
-function blakePoem() {
-    tweet(blakeLines());
-};
-function blakeImage() {
+function elevenAM() {
+    tweet(caravaggio());    
     tweet(blakeArt());
-};
-function emerson() {
-    tweet(emersonQuotes());
-};
-function wyethArt() {
+    tweet(romanticism());
     tweet(wyeth());
 };
+function threeThirtyPM() {
+    tweet(mannQuotes());
+    tweet(blakeLines());
+    tweet(emersonQuotes());
+    tweet(whitmanQuotes());
+    tweet(hdThoreau());
+};
+function fourPM() {
+    tweet(caravaggio());
+    tweet(romanticism());
+    tweet(wyeth());
+};
+function sevenThirtyPM() {
+    tweet(mannQuotes());
+    tweet(emersonQuotes());
+    tweet(whitmanQuotes());
+    tweet(hdThoreau());
+};
+function eightPM() {
+    tweet(caravaggio());
+    tweet(blakeArt());
+    tweet(romanticism());
+    tweet(wyeth());
+};
+
 module.exports = { 
-    mann,
-    whitman,
-    thoreau,
-    romanticArt,
-    caravaggioArt,
-    blakeImage,
-    blakePoem,
-    emerson,
-    wyethArt
+    tenThirtyAM,
+    elevenAM,
+    threeThirtyPM,
+    fourPM,
+    sevenThirtyPM,
+    eightPM
 }

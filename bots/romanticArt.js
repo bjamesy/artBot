@@ -1,7 +1,18 @@
 const fetch = require('node-fetch');
+const { shuffleTags } = require('../db/twitter/tools');
 
 function romanticism() {    
     const promise = new Promise((resolve, reject) => {
+        const hashtags = [
+            '#germanRomanticism', 
+            '#romanticArt', 
+            '#casperDavidFrederich', 
+            '#germanArt', 
+            '#artBot'
+        ]
+        // function taken from twitter/tools to shuffle hashtags array 
+        const tags = shuffleTags(hashtags);
+
         fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d97edc2cb3880b4b0fc&imageFormat=HD`)
             .then(result => result.json())
             .then(data => {
@@ -12,7 +23,7 @@ function romanticism() {
 
                 resolve({ 
                     rerun: romanticism,
-                    content: post, 
+                    content: post + " " + tags[0] + " " + tags[1], 
                     image: painting.image,
                     fileName: "romantic-art.jpg",
                     name: "Romanticism",

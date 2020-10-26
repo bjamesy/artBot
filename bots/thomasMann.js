@@ -1,16 +1,30 @@
-const fetch = require('node-fetch');
+const fetch           = require('node-fetch');
+const { shuffleTags } = require('../db/twitter/tools');
 
 function mannQuotes() {
     const promise = new Promise((resolve, reject) => {
+        const hashtags = [
+            '#thomasMann', 
+            '#germanLit', 
+            '#germanLiterature', 
+            '#literature', 
+            '#tragicRealism', 
+            '#literaryRealism', 
+            '#realism'
+        ]
+        // function taken from twitter/tools to shuffle hashtags array 
+        const tags = shuffleTags(hashtags);
+
         fetch(`https://www.stands4.com/services/v2/quotes.php?uid=${process.env.QUOTES_API_id}&tokenid=${process.env.QUOTES_API_token}&searchtype=AUTHOR&query=Thomas+Mann&format=json`)
             .then(res => {
                 return res.json();
             })
             .then(data => {
                 let content = data.result[Math.floor(Math.random() * data.result.length)];
+
                 resolve({
                     rerun: mannQuotes,
-                    content: content.quote,
+                    content: content.quote + " " + tags[0] + " " + tags[1],
                     name: "Thomas Mann",
                     consumer_key: process.env.TWITTER_CONSUMER_KEY_thomas_mann,
                     consumer_secret: process.env.TWITTER_CONSUMER_SECRET_thomas_mann,

@@ -1,7 +1,19 @@
 const fetch = require('node-fetch');
+const { shuffleTags } = require('../db/twitter/tools');
 
 function whitmanQuotes() {
     const promise = new Promise((resolve, reject) => {
+        const hashtags = [
+            '#americanTranscendentalism', 
+            '#americanArt', 
+            '#whitman', 
+            '#americanPoetry',
+            '#americanLiterature',
+            '#americanRomanticism'
+        ]
+        // function taken from twitter/tools to shuffle hashtags array 
+        const tags = shuffleTags(hashtags);
+
         const post = [];
     
         fetch(`https://poetrydb.org/author/Whitman`)
@@ -23,7 +35,7 @@ function whitmanQuotes() {
                 }            
                 resolve({ 
                     rerun: whitmanQuotes,
-                    content: post.join(""), 
+                    content: post.join("") + " " + tags[0] + " " + tags[1], 
                     name: "Walt Whitman",
                     consumer_key: process.env.TWITTER_CONSUMER_KEY_walt_whitman,
                     consumer_secret: process.env.TWITTER_CONSUMER_SECRET_walt_whitman,

@@ -1,7 +1,20 @@
 const fetch = require('node-fetch');
+const { shuffleTags } = require('../db/twitter/tools');
 
 function blakeLines() {
     const promise = new Promise((resolve, reject) => {
+        const hashtags = [
+            '#williamBlake', 
+            '#englishArt', 
+            '#artBot', 
+            '#englishRomanticism', 
+            '#romanticism',
+            '#literaryRomanticism',
+            '#mysticism'
+        ]
+        // function taken from twitter/tools to shuffle hashtags array 
+        const tags = shuffleTags(hashtags);
+    
         const post = [];
     
         fetch(`https://poetrydb.org/author/blake`)
@@ -24,7 +37,7 @@ function blakeLines() {
 
                 resolve({ 
                     rerun: blakeLines,
-                    content: post.join(""), 
+                    content: post.join("") + " " + tags[0] + " " + tags[1], 
                     name: "William Blake",
                     consumer_key: process.env.TWITTER_CONSUMER_KEY_blake,
                     consumer_secret: process.env.TWITTER_CONSUMER_SECRET_blake,
@@ -41,6 +54,17 @@ function blakeLines() {
 }
 
 function blakeArt() {    
+    const hashtags = [
+        '#williamBlake', 
+        '#englishArt', 
+        '#artBot', 
+        '#englishRomanticism', 
+        '#romanticism',
+        '#mysticism' 
+    ]
+    // function taken from twitter/tools to shuffle hashtags array 
+    const tags = shuffleTags(hashtags);
+
     const promise = new Promise((resolve, reject) => {
         fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d7eedc2cb3880b47f24&imageFormat=HD`)
             .then(result => result.json())
@@ -52,7 +76,7 @@ function blakeArt() {
 
                 resolve({ 
                     rerun: blakeArt,
-                    content: post, 
+                    content: post + " " + tags[0] + " " + tags[1],  
                     image: painting.image,
                     fileName: "blake.jpg",
                     name: "William Blake",

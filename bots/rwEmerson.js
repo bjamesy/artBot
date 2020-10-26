@@ -1,7 +1,20 @@
 const fetch = require('node-fetch');
+const { shuffleTags } = require('../db/twitter/tools');
 
 function emersonQuotes() {
     const promise = new Promise((resolve, reject) => {
+        const hashtags = [
+            '#transcendentalism', 
+            '#americanTranscendentalism', 
+            '#americanArt', 
+            '#emerson', 
+            '#emersonPoetry',
+            '#americanLiterature',
+            '#nature' 
+        ]
+        // function taken from twitter/tools to shuffle hashtags array 
+        const tags = shuffleTags(hashtags);
+
         const post = [];
     
         fetch(`https://poetrydb.org/author/emerson`)
@@ -23,7 +36,7 @@ function emersonQuotes() {
                 }            
                 resolve({ 
                     rerun: emersonQuotes,
-                    content: post.join(""), 
+                    content: post.join("") + " " + tags[0] + " " + tags[1], 
                     name: "Ralph Waldo Emerson",
                     consumer_key: process.env.TWITTER_CONSUMER_KEY_emerson,
                     consumer_secret: process.env.TWITTER_CONSUMER_SECRET_emerson,

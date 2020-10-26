@@ -1,7 +1,20 @@
 const fetch = require('node-fetch');
+const { shuffleTags } = require('../db/twitter/tools');
 
 function hdThoreau() {
     const promise = new Promise((resolve, reject) => {
+        const hashtags = [
+            '#transcendentalism', 
+            '#americanTranscendentalism', 
+            '#americanArt', 
+            '#henryDavidThoreau', 
+            '#thoreauPoetry',
+            '#americanLiterature',
+            '#walden' 
+        ]
+        // function taken from twitter/tools to shuffle hashtags array 
+        const tags = shuffleTags(hashtags);
+    
         const post = [];
     
         fetch(`https://poetrydb.org/author/thoreau`)
@@ -23,7 +36,7 @@ function hdThoreau() {
                 }            
                 resolve({ 
                     rerun: hdThoreau,
-                    content: post.join(""), 
+                    content: post.join("") + " " + tags[0] + " " + tags[1], 
                     name: "Henry David Thoreau",
                     consumer_key: process.env.TWITTER_CONSUMER_KEY_hd_thoreau,
                     consumer_secret: process.env.TWITTER_CONSUMER_SECRET_hd_thoreau,

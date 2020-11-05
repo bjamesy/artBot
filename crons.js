@@ -6,6 +6,8 @@ const { romanticism }   = require('./bots/romanticArt');
 const { caravaggio }    = require('./bots/caravaggio');
 const { emersonQuotes } = require('./bots/rwEmerson');
 const { wyeth }         = require('./bots/andrewWyeth');
+const { dickinson }     = require('./bots/emilydickinson');
+const { hopper }        = require('./bots/edwardHopper')
 const { 
     blakeLines,
     blakeArt
@@ -16,12 +18,14 @@ function tenThirtyAM() {
     tweet(emersonQuotes());
     tweet(whitmanQuotes());
     tweet(hdThoreau());
+    tweet(dickinson());
 };
 function elevenAM() {
     tweet(caravaggio());    
     tweet(blakeArt());
     tweet(romanticism());
     tweet(wyeth());
+    tweet(hopper());
 };
 function threeThirtyPM() {
     tweet(mannQuotes());
@@ -29,23 +33,27 @@ function threeThirtyPM() {
     tweet(emersonQuotes());
     tweet(whitmanQuotes());
     tweet(hdThoreau());
+    tweet(dickinson());
 };
 function fourPM() {
     tweet(caravaggio());
     tweet(romanticism());
     tweet(wyeth());
+    tweet(hopper());
 };
 function sevenThirtyPM() {
     tweet(mannQuotes());
     tweet(emersonQuotes());
     tweet(whitmanQuotes());
     tweet(hdThoreau());
+    tweet(dickinson());
 };
 function eightPM() {
     tweet(caravaggio());
     tweet(blakeArt());
     tweet(romanticism());
     tweet(wyeth());
+    tweet(hopper());
 };
 
 module.exports = { 

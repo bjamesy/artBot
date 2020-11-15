@@ -1,15 +1,14 @@
 const fetch           = require('node-fetch');
 const { shuffleTags } = require('../db/twitter/tools');
 
-function mannQuotes() {
+function winslow() {
     const promise = new Promise((resolve, reject) => {
         const hashtags = [
-            '#thomasMann', 
-            '#germanLit', 
-            '#germanLiterature', 
-            '#literature', 
-            '#tragicRealism', 
-            '#literaryRealism', 
+            '#winslowHomer', 
+            '#americanRealism', 
+            '#TileClub', 
+            '#winslow', 
+            '#americanArt', 
             '#realism'
         ]
         // function taken from twitter/tools to shuffle hashtags array 
@@ -40,4 +39,4 @@ function mannQuotes() {
     return promise;
 }
 
-module.exports = { mannQuotes };
+module.exports = { winslow };

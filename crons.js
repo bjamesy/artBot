@@ -1,7 +1,7 @@
 const { tweet }         = require('./db/twitter/twitter');
 const { whitmanQuotes } = require('./bots/waltWhitman');
 const { hdThoreau }     = require('./bots/hdThoreau');
-const { mannQuotes }    = require('./bots/thomasMann');
+const { winslow }       = require('./bots/winslowHomer');
 const { romanticism }   = require('./bots/romanticArt');
 const { caravaggio }    = require('./bots/caravaggio');
 const { emersonQuotes } = require('./bots/rwEmerson');
@@ -14,13 +14,13 @@ const {
 } = require('./bots/williamBlake');
 
 function tenThirtyAM() {
-    tweet(mannQuotes());
     tweet(emersonQuotes());
     tweet(whitmanQuotes());
     tweet(hdThoreau());
     tweet(dickinson());
 };
 function elevenAM() {
+    tweet(winslow());
     tweet(caravaggio());    
     tweet(blakeArt());
     tweet(romanticism());
@@ -28,7 +28,6 @@ function elevenAM() {
     tweet(hopper());
 };
 function threeThirtyPM() {
-    tweet(mannQuotes());
     tweet(blakeLines());
     tweet(emersonQuotes());
     tweet(whitmanQuotes());
@@ -36,19 +35,20 @@ function threeThirtyPM() {
     tweet(dickinson());
 };
 function fourPM() {
+    tweet(winslow());
     tweet(caravaggio());
     tweet(romanticism());
     tweet(wyeth());
     tweet(hopper());
 };
 function sevenThirtyPM() {
-    tweet(mannQuotes());
     tweet(emersonQuotes());
     tweet(whitmanQuotes());
     tweet(hdThoreau());
     tweet(dickinson());
 };
 function eightPM() {
+    tweet(winslow());
     tweet(caravaggio());
     tweet(blakeArt());
     tweet(romanticism());

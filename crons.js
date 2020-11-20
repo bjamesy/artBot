@@ -7,7 +7,8 @@ const { caravaggio }    = require('./bots/caravaggio');
 const { emersonQuotes } = require('./bots/rwEmerson');
 const { wyeth }         = require('./bots/andrewWyeth');
 const { dickinson }     = require('./bots/emilydickinson');
-const { hopper }        = require('./bots/edwardHopper')
+const { hopper }        = require('./bots/edwardHopper');
+const { meyerowitz }    = require('./bots/joelMeyerowitz');
 const { 
     blakeLines,
     blakeArt
@@ -18,6 +19,7 @@ function tenThirtyAM() {
     tweet(whitmanQuotes());
     tweet(hdThoreau());
     tweet(dickinson());
+    tweet(meyerowitz());
 };
 function elevenAM() {
     tweet(winslow());
@@ -33,6 +35,7 @@ function threeThirtyPM() {
     tweet(whitmanQuotes());
     tweet(hdThoreau());
     tweet(dickinson());
+    tweet(meyerowitz());
 };
 function fourPM() {
     tweet(winslow());
@@ -46,6 +49,7 @@ function sevenThirtyPM() {
     tweet(whitmanQuotes());
     tweet(hdThoreau());
     tweet(dickinson());
+    tweet(meyerowitz());
 };
 function eightPM() {
     tweet(winslow());

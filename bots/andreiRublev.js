@@ -9,7 +9,9 @@ function rublev() {
             '#artBot', 
             '#iconPainting', 
             '#icon',
-            '#religiousArt'
+            '#religiousArt',
+            '#byzantine',
+            '#tarkovsky'
         ]
         // function taken from twitter/tools to shuffle hashtags array 
         const tags = shuffleTags(hashtags);

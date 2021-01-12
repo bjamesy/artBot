@@ -6,7 +6,6 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -15,9 +14,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.0",
-    "puppeteer": "^5.5.0",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6",
     "twitter": "^1.7.1",
     "wikijs": "^6.0.1"
   }

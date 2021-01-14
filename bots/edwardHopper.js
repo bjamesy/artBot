@@ -16,13 +16,15 @@ function hopper() {
         // function taken from twitter/tools directory to shuffle hashtags array 
         const tags = shuffleTags(hashtags);
 
-        fetch(`https://www.wikiart.org/en/api/2/PaintingsByArtist?id=57726d87edc2cb3880b49321&imageFormat=HD`)
+        fetch(`https://www.wikiart.org/en/App/Painting/PaintingsByArtist?artistUrl=edward-hopper&json=2`)
             .then(result => result.json())
             .then(data => {
-                let painting = data.data[Math.floor(Math.random() * data.data.length)];
+                let painting = data[Math.floor(Math.random() * data.length)];
 
                 let completitionYear = painting.completitionYear.toString();
                 let post = painting.title + "\n".concat(completitionYear);
+
+                console.log(painting);
 
                 resolve({ 
                     rerun: hopper,

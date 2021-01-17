@@ -1,4 +1,6 @@
+// tweet function
 const { tweet }         = require('./db/twitter/twitter');
+// bots
 const { whitmanQuotes } = require('./bots/waltWhitman');
 const { hdThoreau }     = require('./bots/hdThoreau');
 const { winslow }       = require('./bots/winslowHomer');
@@ -9,7 +11,8 @@ const { wyeth }         = require('./bots/andrewWyeth');
 const { dickinson }     = require('./bots/emilydickinson');
 const { hopper }        = require('./bots/edwardHopper');
 const { rublev }        = require('./bots/andreiRublev');
-const { baldwin }       = require('./bots/jamesBaldwin')
+const { baldwin }       = require('./bots/jamesBaldwin');
+const { dylan }         = require('./bots/bobDylan');
 const { 
     blakeLines,
     blakeArt
@@ -20,8 +23,8 @@ function tenThirtyAM() {
     tweet(whitmanQuotes());
     tweet(hdThoreau());
     tweet(dickinson());
-    tweet(rublev());
     tweet(baldwin());
+    tweet(dylan());
 };
 function elevenAM() {
     tweet(winslow());
@@ -30,6 +33,7 @@ function elevenAM() {
     tweet(romanticism());
     tweet(wyeth());
     tweet(hopper());
+    tweet(rublev());
 };
 function threeThirtyPM() {
     tweet(blakeLines());
@@ -38,6 +42,7 @@ function threeThirtyPM() {
     tweet(hdThoreau());
     tweet(dickinson());
     tweet(baldwin());
+    tweet(dylan());
 };
 function fourPM() {
     tweet(winslow());
@@ -53,6 +58,7 @@ function sevenThirtyPM() {
     tweet(hdThoreau());
     tweet(dickinson());
     tweet(baldwin());
+    tweet(dylan());
 };
 function eightPM() {
     tweet(winslow());

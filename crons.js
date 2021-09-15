@@ -12,7 +12,7 @@ const { dickinson }     = require('./bots/emilydickinson');
 const { hopper }        = require('./bots/edwardHopper');
 const { rublev }        = require('./bots/andreiRublev');
 const { baldwin }       = require('./bots/jamesBaldwin');
-const { dylan }         = require('./bots/bobDylan');
+const { murakami }         = require('./bots/bobDylan');
 const { 
     blakeLines,
     blakeArt
@@ -24,7 +24,7 @@ function tenThirtyAM() {
     tweet(hdThoreau());
     tweet(dickinson());
     tweet(baldwin());
-    tweet(dylan());
+    tweet(murakami());
 };
 function elevenAM() {
     tweet(winslow());
@@ -42,7 +42,7 @@ function threeThirtyPM() {
     tweet(hdThoreau());
     tweet(dickinson());
     tweet(baldwin());
-    tweet(dylan());
+    tweet(murakami());
 };
 function fourPM() {
     tweet(winslow());
@@ -58,7 +58,7 @@ function sevenThirtyPM() {
     tweet(hdThoreau());
     tweet(dickinson());
     tweet(baldwin());
-    tweet(dylan());
+    tweet(murakami());
 };
 function eightPM() {
     tweet(winslow());

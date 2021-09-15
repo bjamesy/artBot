@@ -4,12 +4,12 @@ const { shuffleTags } = require('../db/twitter/tools');
 function murakami() {
     const promise = new Promise((resolve, reject) => {
         const hashtags = [
-            '#americanArt', 
-            '#bobDylan', 
-            '#americanFolk',
-            '#dylan',
-            '#robertZimmerman',
-            '#bob',
+            '#norwegianWood', 
+            '#murakami', 
+            '#magicalRealism',
+            '#literature',
+            '#realism',
+            '#harukiMurakami',
             '#artBot'
         ]
         // function taken from twitter/tools to shuffle hashtags array 

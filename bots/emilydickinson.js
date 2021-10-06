@@ -4,12 +4,11 @@ const { shuffleTags } = require('../db/twitter/tools');
 function yeats() {
     const promise = new Promise((resolve, reject) => {
         const hashtags = [
-            '#americanTranscendentalism', 
+            '#yeats', 
             '#americanArt', 
-            '#dickinson', 
-            '#americanPoetry',
+            '#WByeats', 
+            '#SecondComing',
             '#americanLiterature',
-            '#emilyDickinson'
         ]
         // function taken from twitter/tools to shuffle hashtags array 
         const tags = shuffleTags(hashtags);

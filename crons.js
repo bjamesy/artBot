@@ -8,7 +8,7 @@ const { romanticism }   = require('./bots/romanticArt');
 const { caravaggio }    = require('./bots/caravaggio');
 const { henryJames }    = require('./bots/rwEmerson');
 const { wyeth }         = require('./bots/andrewWyeth');
-const { dickinson }     = require('./bots/emilydickinson');
+const { yeats }         = require('./bots/emilydickinson');
 const { hopper }        = require('./bots/edwardHopper');
 const { rublev }        = require('./bots/andreiRublev');
 const { baldwin }       = require('./bots/jamesBaldwin');
@@ -22,7 +22,7 @@ function tenThirtyAM() {
     tweet(henryJames());
     tweet(whitmanQuotes());
     tweet(rimbaud());
-    tweet(dickinson());
+    tweet(yeats());
     tweet(baldwin());
     tweet(murakami());
 };
@@ -40,7 +40,7 @@ function threeThirtyPM() {
     tweet(henryJames());
     tweet(whitmanQuotes());
     tweet(rimbaud());
-    tweet(dickinson());
+    tweet(yeats());
     tweet(baldwin());
     tweet(murakami());
 };
@@ -56,7 +56,7 @@ function sevenThirtyPM() {
     tweet(henryJames());
     tweet(whitmanQuotes());
     tweet(rimbaud());
-    tweet(dickinson());
+    tweet(yeats());
     tweet(baldwin());
     tweet(murakami());
 };

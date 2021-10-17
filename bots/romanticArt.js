@@ -20,7 +20,9 @@ function romanticism() {
             '57726d88edc2cb3880b49573',  // William turner
             '57726d88edc2cb3880b494b3',  // Alexei Savrasov
             '57726d92edc2cb3880b4a829',  // Andrew wyeth
-            '57726d7dedc2cb3880b47dd6'   // john constable
+            '57726d7dedc2cb3880b47dd6',  // John constable
+            '57726d80edc2cb3880b48228',  // Ivan Aivazovsky
+            '57726d8fedc2cb3880b4a3a7'   // Albert Bierstadt
         ]
         const artistId = shuffleTags(artists);
 
